@@ -58,3 +58,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise", "~> 4.8"
 
 gem "simple_form", "~> 5.1"
+
+gem "omniauth-google-oauth2", "~> 1.0"
+
+gem "omniauth-rails_csrf_protection", "~> 1.0"

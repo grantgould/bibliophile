@@ -1,15 +1,13 @@
+<div class="card">
+  <div class="card-body">
+    <small><%= review %></small>
+    <h5>
+      <% review.rating.times do |i| %>
+        <i class="bi bi-star-fill"></i>
+      <% end %>
+      <p><%= review.review %></p>
+    </h5>
+  </div>
+</div>
 
-<p>
-  <strong>Rating:</strong>
-  <%= review.rating %>
-</p>
-
-<p>
-  <strong>Review:</strong>
-  <%= review.review %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= review.user %>
-</p>
+<div class="p-1"></div>

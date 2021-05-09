@@ -10,4 +10,8 @@ class Book < ApplicationRecord
   validates :authored_books, presence: true
 
   accepts_nested_attributes_for :authored_books
+
+  def to_s 
+    title
+  end
 end

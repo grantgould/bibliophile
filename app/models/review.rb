@@ -11,4 +11,8 @@ class Review < ApplicationRecord
 
   scope :year_in_review, 
         -> { where(created_at: 1.year.ago...DateTime.now) }
+  
+  def to_s 
+    "#{user} reviewed #{book}"
+  end
 end

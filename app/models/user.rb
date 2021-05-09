@@ -5,6 +5,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :lockable
+  
+  devise :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_many :reviews, dependent: :destroy
   has_many :books, through: :reviews
@@ -16,7 +18,7 @@ class User < ApplicationRecord
           format: { with: /\A[A-z0-9_]*\z/i }
 
   def to_s
-    name
+    "@#{username}"
   end
 
   def login
