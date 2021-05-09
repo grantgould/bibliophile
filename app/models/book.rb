@@ -6,7 +6,8 @@ class Book < ApplicationRecord
   has_many :authored_books 
   has_many :authors, through: :authored_books
 
-  validates :title, :synopsis, :authored_books, presence: true 
+  validates :title, :synopsis, presence: true 
+  validates :authored_books, presence: true
 
   accepts_nested_attributes_for :authored_books
 end
