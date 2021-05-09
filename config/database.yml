@@ -17,6 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: db
+  username: postgres
+  password: password
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -83,4 +86,4 @@ production:
   <<: *default
   database: bibliophile_production
   username: bibliophile
-  password: <%= ENV['BIBLIOPHILE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['bibliophile_DATABASE_PASSWORD'] %>
