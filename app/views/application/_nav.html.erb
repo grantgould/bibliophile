@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1"><%= app_name %></span>
+    <div class="d-flex nav-item dropdown">
+      <% if user_signed_in? %>
+        <%= link_to("Login", new_user_session_path(), class: "btn btn-outline-success me-2") %>
+      <% else %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "tn btn-outline-warn me-2" %> 
+      <% end %>
+    </div>
+  </div>
+</nav>
