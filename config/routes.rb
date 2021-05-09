@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :authors
   resources :genres
   resources :books do 
     member do 
