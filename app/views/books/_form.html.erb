@@ -25,7 +25,7 @@
 
   <div class="field">
     <%= form.simple_fields_for :authored_books, AuthoredBook.new do |authored_books_form| %>
-      <%= authored_books_form.association :author, as: :select, {multiple: true} %>
+      <%= authored_books_form.association :author, as: :select %>
     <% end %>
   </div>
 
