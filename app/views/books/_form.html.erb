@@ -24,8 +24,10 @@
   </div>
 
   <div class="field">
-    <%= form.simple_fields_for :authored_books, AuthoredBook.new do |authored_books_form| %>
+    <%= form.simple_fields_for :authored_books, book.authored_books do |authored_books_form| %>
       <%= authored_books_form.association :author, as: :select %>
+      <%= authored_books_form.input :_destroy, as: :boolean %>
+      <%= %>
     <% end %>
   </div>
 

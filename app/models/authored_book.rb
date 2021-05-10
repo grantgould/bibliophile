@@ -6,5 +6,5 @@ class AuthoredBook < ApplicationRecord
     "#{author} authored #{book}"
   end
 
-  accepts_nested_attributes_for :author 
+  accepts_nested_attributes_for :author
 end

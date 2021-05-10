@@ -9,8 +9,8 @@ class Book < ApplicationRecord
   validates :title, :synopsis, presence: true 
   validates :authored_books, presence: true
 
-  accepts_nested_attributes_for :authored_books
-
+  accepts_nested_attributes_for :authored_books, allow_destroy: true 
+  
   def to_s 
     title
   end
