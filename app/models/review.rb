@@ -8,7 +8,8 @@ class Review < ApplicationRecord
 
   validates :rating, presence: true, 
             numericality: { greater_than: 0, less_than_or_equal_to: 5 }
-
+            
+  scope :recent, -> { order(id: :desc) }
   scope :year_in_review, 
         -> { where(created_at: 1.year.ago...DateTime.now) }
   

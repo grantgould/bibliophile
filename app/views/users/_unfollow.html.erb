@@ -1,0 +1,5 @@
+<%= form_with url: unfollow_user_path(user), method: :delete do |form|%>
+  <div class="d-grid gap-2">
+    <%= form.submit "Unfollow", data: { confirm: "Unfollow?" }, class: "btn btn-outline-danger btn-lg" %>
+  </div>
+<% end %>

@@ -1,4 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @genre %></h1>
+
+<strong>Books:</strong>
+
+<ul>
+    <% @genre.books.each do |book| %>
+        <li><%= link_to book, book_path(book) %></li>
+    <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_genre_path(@genre) %> |
 <%= link_to 'Back', genres_path %>

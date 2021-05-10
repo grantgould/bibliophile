@@ -32,8 +32,24 @@ class User < ApplicationRecord
     "@#{username}"
   end
 
+  def to_param
+    username
+  end
+
   def login
     @login || self.username || self.email
+  end
+
+  def add_follow(follower)
+    followed_users.create(follower: follower)
+  end
+
+  def remove_follow(follower)
+    followed_users.find_by(follower: follower).destroy
+  end
+
+  def follows?(followed)
+    following_users.find_by(follows: followed).present?
   end
 
   def self.find_for_database_authentication(warden_conditions)
@@ -44,5 +60,6 @@ class User < ApplicationRecord
       where(conditions.to_h).first
     end
   end
+  
 
 end

@@ -1,0 +1,5 @@
+<%= form_for "follow", url: follow_user_path(user) do |form| %>
+  <div class="d-grid gap-2">
+    <%= form.button "Follow", class: "btn btn-outline-success btn-lg", type: "submit" %>
+  </div>
+<% end %>

@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get "/@:username", to: "users#show"
+  get "/@:username", to: "users#show", as: :user
+  post "/@:username/follow", to: "users#follow", as: :follow_user
+  delete "/@:username/unfollow", to: "users#unfollow", as: :unfollow_user
 
   root to: "main#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

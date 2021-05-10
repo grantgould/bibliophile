@@ -17,7 +17,7 @@
 <p>
   <strong>Authors:</strong>
   <% @book.authors.each do |author| %>
-    <strong><%= author %><strong> 
+    <strong><%= link_to author, author_path(author) %><strong> 
   <% end %>
 </p>
 

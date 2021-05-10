@@ -1,3 +1,7 @@
 <h1>Feed</h1>
 
-<%= render partial: "review", collection: @reviews %>
+<% if @reviews.count == 0 %>
+    <small>You might need to follow some people in order to have a feed.</h1>
+<% else %>
+    <%= render partial: "review", collection: @reviews %>
+<% end %>
