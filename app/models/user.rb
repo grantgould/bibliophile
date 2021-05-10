@@ -10,6 +10,17 @@ class User < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
   has_many :books, through: :reviews
+
+  has_many :followed_users, 
+           foreign_key: :follows_id, class_name: 'Follow', 
+           dependent: :destroy
+
+  has_many :following_users, 
+           foreign_key: :follower_id, class_name: 'Follow', 
+           dependent: :destroy
+
+  has_many :follows, through: :following_users
+  has_many :followers, through: :followed_users
             
   validates :name, :username, presence: true 
 
